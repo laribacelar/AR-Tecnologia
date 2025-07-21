@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -22,43 +22,43 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <title>AR Tecnologia Doméstica - Climatização e Segurança</title>
   </head>
 
   <body>
-    <header>
-      <a
-        href="/"
-        class="logo-link"
-        aria-label="Página inicial da AR Tecnologia Doméstica"
-      >
+    <header class="header">
+      <a href="/" aria-label="Página inicial da AR Tecnologia Doméstica">
         <img
           class="logo"
           src="./assets/logo.png"
-          alt="Logo AT Tecnologia Doméstica"
+          alt="Logo AR Tecnologia Doméstica"
         />
       </a>
-
       <button
         id="menu-hamburguer"
         aria-label="Abrir menu"
         aria-expanded="false"
+        aria-controls="menu-principal"
       >
         <i class="ri-menu-line"></i>
       </button>
-
-      <nav class="menu">
+      <nav class="menu" id="menu-principal">
         <ul>
           <li><a href="#inicio">Início</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Nossas Soluções</a></li>
+          <li><a href="#sobre">Sobre nós</a></li>
+          <li><a href="#portfolio">Serviços Realizados</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section id="inicio" aria-labelledby="hero-title">
+      <section id="inicio" aria-label="Apresentação da Empresa">
         <img
           class="apresentation"
           src="./assets/apresentation.webp"
@@ -67,78 +67,115 @@
       </section>
 
       <section id="servicos" aria-labelledby="servicos-title">
-        <h2 id="servicos-title">Nossos Serviços</h2>
+        <h2 id="servicos-title" class="section-title">Nossas Soluções</h2>
+        <p class="section-subtitle">
+          Oferecemos serviços completos para garantir a segurança, o conforto e
+          a eficiência energética do seu imóvel.
+        </p>
+
         <div class="servicos-container">
-          <article>
+          <article class="servico-card">
             <img
-              src="./assets/motor-portao.webp"
-              alt="Motor de portão eletrônico instalado."
+              src="./assets/portao-1.jpg"
+              alt="Motor de portão eletrônico instalado em um portão de garagem."
+              loading="lazy"
+              decoding="async"
             />
-            <h3>Motores para Portões</h3>
-            <p>
-              Trabalhamos com venda e instalação de motores para portões
-              automáticos, proporcionando mais segurança e praticidade para seu
-              imóvel.
-            </p>
+            <div class="servico-card-content">
+              <h3>Automação de Portões</h3>
+              <p>
+                Venda e instalação de motores para portões automáticos,
+                proporcionando mais segurança e praticidade para seu dia a dia.
+              </p>
+              <a href="#formulario" class="btn-servico">Solicitar Orçamento</a>
+            </div>
           </article>
-          <article>
+
+          <article class="servico-card">
             <img
-              src="./assets/ar-condicionado.webp"
-              alt="Ar-condicionado split branco instalado em uma parede."
+              src="./assets/ar-condicionado1.jpg"
+              alt="Ar-condicionado split branco instalado em uma parede de tijolos."
+              loading="lazy"
+              decoding="async"
             />
-            <h3>Ar Condicionado em Geral</h3>
-            <p>
-              Oferecemos ar-condicionado de diversas marcas e modelos, além de
-              instalação e manutenção para garantir seu funcionamento eficiente
-              em qualquer ambiente.
-            </p>
+            <div class="servico-card-content">
+              <h3>Climatização de Ambientes</h3>
+              <p>
+                Instalação, manutenção e reparos em ar-condicionado de diversas
+                marcas, garantindo o conforto térmico do seu espaço.
+              </p>
+              <a href="#formulario" class="btn-servico">Solicitar Orçamento</a>
+            </div>
           </article>
-          <article>
+
+          <article class="servico-card">
             <img
-              src="./assets/sistemas-segurança.webp"
-              alt="Câmera de segurança Dome instalada no teto."
+              src="./assets/seguranca.jpg"
+              alt="Câmera de segurança Dome branca instalada no teto de um escritório."
+              loading="lazy"
+              decoding="async"
             />
-            <h3>Sistemas de Segurança</h3>
-            <p>
-              Instalamos sistemas de segurança completos, incluindo alarmes,
-              interfones e câmeras, para monitoramento e proteção de residências
-              e empresas.
-            </p>
+            <div class="servico-card-content">
+              <h3>Sistemas de Segurança</h3>
+              <p>
+                Instalação de câmeras (CFTV), alarmes e interfones para sua
+                total proteção residencial ou comercial.
+              </p>
+              <a href="#formulario" class="btn-servico">Solicitar Orçamento</a>
+            </div>
           </article>
-          <article>
+
+          <article class="servico-card">
             <img
-              src="./assets/cercas-eletricas.webp"
+              src="./assets/cerca-1.jpg"
               alt="Detalhe de uma cerca elétrica industrial com placas de aviso."
+              loading="lazy"
+              decoding="async"
             />
-            <h3>Cercas Elétricas</h3>
-            <p>
-              Serviço de instalação de cercas elétricas para aumentar a
-              segurança de sua propriedade, com tecnologia de alta eficiência e
-              proteção.
-            </p>
+            <div class="servico-card-content">
+              <h3>Cercas Elétricas</h3>
+              <p>
+                Instalação e manutenção de cercas elétricas, uma barreira de
+                proteção eficaz e de alta tecnologia contra invasões.
+              </p>
+              <a href="#formulario" class="btn-servico">Solicitar Orçamento</a>
+            </div>
           </article>
-          <article>
+
+          <article class="servico-card">
             <img
-              src="./assets/reparos-eletricos.webp"
-              alt="Mãos de um eletricista trabalhando em um quadro de disjuntores."
+              src="./assets/REPAROS-ELETRICOS.png"
+              alt="Mãos de um eletricista profissional trabalhando em um quadro de disjuntores."
+              loading="lazy"
+              decoding="async"
             />
-            <h3>Reparos Elétricos</h3>
-            <p>
-              Realizamos reparos elétricos em instalações residenciais e
-              comerciais, sempre com agilidade e atenção às normas de segurança.
-            </p>
+            <div class="servico-card-content">
+              <h3>Instalações e Reparos</h3>
+              <p>
+                Realizamos todos os tipos de reparos e instalações, desde a
+                troca de uma tomada até a reforma completa da fiação do seu
+                imóvel.
+              </p>
+              <a href="#formulario" class="btn-servico">Solicitar Orçamento</a>
+            </div>
           </article>
-          <article>
+
+          <article class="servico-card">
             <img
-              src="./assets/maquina-lavar.webp"
-              alt="Interior de uma máquina de lavar roupas moderna."
+              src="./assets/padrao.jpg"
+              alt="Caixa de padrão de energia com medidor e disjuntores instalada na parede."
+              loading="lazy"
+              decoding="async"
             />
-            <h3>Conserto de Máquinas de Lavar</h3>
-            <p>
-              Especializados em conserto de máquinas de lavar de diversas
-              marcas, restaurando o funcionamento e prolongando a vida útil do
-              equipamento.
-            </p>
+            <div class="servico-card-content">
+              <h3>Padrão de Entrada de Energia</h3>
+              <p>
+                Instalação e adequação do padrão de entrada (monofásico,
+                bifásico e trifásico) conforme as normas da concessionária
+                local.
+              </p>
+              <a href="#formulario" class="btn-servico">Solicitar Orçamento</a>
+            </div>
           </article>
         </div>
       </section>
@@ -147,135 +184,210 @@
         <img
           src="./assets/sobre.webp"
           alt="Equipe da AR Tecnologia Doméstica reunida e sorrindo."
+          loading="lazy"
+          decoding="async"
         />
-        <div>
-          <h2 id="sobre-title">Sobre Nós</h2>
+        <div class="sobre-content">
+          <h2 id="sobre-title" class="section-title" style="text-align: left">
+            Sobre Nós
+          </h2>
           <p class="sobre-p">
-            Desde setembro de 2019, a AR Tecnologia Doméstica se destaca pela
-            venda, instalação e manutenção de ar-condicionado, motores para
-            portões, alarmes, interfones, câmeras, cerca elétrica, reparos
-            elétricos e conserto de máquinas de lavar roupas.
+            Desde 2019, a AR Tecnologia Doméstica se destaca pela excelência em
+            climatização e segurança em Ponta Grossa e região.
           </p>
           <p class="sobre-p">
-            Nosso diferencial é o atendimento rápido, eficiente e com ótimo
-            custo-benefício, sempre priorizando a segurança e a satisfação do
-            cliente em Ponta Grossa e região.
+            Nosso diferencial é o atendimento rápido e eficiente, com ótimo
+            custo-benefício e foco total na sua satisfação.
           </p>
-          <p class="sobre-p">
-            Na AR Tecnologia Doméstica, você encontra soluções completas para
-            sua casa ou empresa com profissionais capacitados e serviço de
-            qualidade.
-          </p>
-
           <ul class="destaques">
             <li>
               <i class="ri-verified-badge-fill" aria-hidden="true"></i>
               Qualidade e Excelência
             </li>
-            <li class="professionals">
+            <li>
               <i class="mdi mdi-account-hard-hat" aria-hidden="true"></i>
-              Profissionais Qualificados!
+              Profissionais Qualificados
             </li>
           </ul>
         </div>
       </section>
 
-      <section class="cta" aria-label="Chamada para contato via WhatsApp">
-        <div>
-          <h2 class="entre-contato">
-            Entre em contato conosco através do nosso
-          </h2>
+      <section id="portfolio" aria-labelledby="portfolio-title">
+        <h2 id="portfolio-title" class="section-title">
+          Alguns de Nossos Serviços
+        </h2>
+        <p class="section-subtitle">
+          Confira exemplos reais da qualidade e do profissionalismo que
+          entregamos em cada projeto.
+        </p>
+
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="./assets/servico-1.jpg"
+                alt="Cerca Elétrica com Concertina"
+                loading="lazy"
+              />
+              <div class="slide-caption">Cerca Elétrica com Concertina</div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/servico-2.jpg"
+                alt="Sistema de Segurança"
+                loading="lazy"
+              />
+              <div class="slide-caption">Sistema de Segurança</div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/servico-3.jpg"
+                alt="Sistema de segurança facial"
+                loading="lazy"
+              />
+              <div class="slide-caption">Sistema de Segurança</div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/servico-4.jpg"
+                alt="Motor de portão instalado"
+                loading="lazy"
+              />
+              <div class="slide-caption">Motor de portão instalado</div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/servico-5.jpg"
+                alt="Motor de portão instalado"
+                loading="lazy"
+              />
+              <div class="slide-caption">Motor de portão instalado</div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/servico-6.jpg"
+                alt="Proteção para motor de portão"
+                loading="lazy"
+              />
+              <div class="slide-caption">Proteção para motor de portão</div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/servico-7.jpg"
+                alt="Cerca Elétrica"
+                loading="lazy"
+              />
+              <div class="slide-caption">Cerca Elétrica</div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <section class="cta" aria-label="Chamada para Ação">
+        <div class="cta-text">
+          <h2 class="entre-contato">Fale conosco pelo WhatsApp!</h2>
           <a
             href="https://wa.me/5542999802609"
             class="button-whatsapp"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="ri-whatsapp-line" aria-hidden="true"></i> WhatsApp!
+            <i class="ri-whatsapp-line" aria-hidden="true"></i> Iniciar Conversa
           </a>
         </div>
-        <div>
+        <div class="cta-divider">
           <h2>OU</h2>
         </div>
         <div class="form-section" id="formulario">
-          <h2></h2>
           <form id="contactForm">
             <label for="name">Nome:</label>
-            <input type="text" id="name" required />
-
+            <input
+              type="text"
+              id="name"
+              required
+              placeholder="Digite seu nome"
+            />
             <label for="contact">Telefone:</label>
-            <input type="tel" id="contact" required />
-
+            <input
+              type="tel"
+              id="contact"
+              required
+              placeholder="(00) 00000-0000"
+            />
             <label for="message">Como podemos te ajudar?</label>
             <textarea
               id="message"
               rows="4"
               required
-              placeholder="Escreva aqui o que precisa"
+              placeholder="Ex: Preciso de um orçamento para instalar um ar-condicionado..."
             ></textarea>
-
-            <div class="modal-buttons">
-              <button id="send" type="submit">Enviar</button>
-            </div>
+            <button type="submit">Enviar Solicitação</button>
           </form>
+          <div id="form-status"></div>
         </div>
       </section>
 
       <section id="contato" aria-labelledby="contato-title">
-        <h2 id="contato-title">Contato</h2>
+        <h2 id="contato-title" class="section-title">Nossos Contatos</h2>
         <div class="contato-container">
           <div class="info-bloco">
-            <i class="ri-phone-line" aria-hidden="true"></i>
+            <div class="icon-wrapper">
+              <i class="ri-phone-line" aria-hidden="true"></i>
+            </div>
             <h3>WhatsApp</h3>
-            <address>
-              <a href="tel:+554299802609" class="button-link"
-                >(42) 9 9980-2609</a
-              >
-            </address>
+            <address><a href="tel:+554299802609">(42) 9 9980-2609</a></address>
           </div>
           <div class="info-bloco">
-            <i class="ri-map-pin-line" aria-hidden="true"></i>
+            <div class="icon-wrapper">
+              <i class="ri-map-pin-line" aria-hidden="true"></i>
+            </div>
             <h3>Endereço</h3>
             <address>
               <a
-                href="https://maps.google.com/?q=Rua+Padre+Denis+Quilty,257,Uvaranas,Ponta+Grossa"
+                href="https://www.google.com/maps/search/?api=1&query=Rua+Padre+Denis+Quilty,+257,+Uvaranas,+Ponta+Grossa+PR"
                 target="_blank"
                 rel="noopener noreferrer"
+                >Rua Padre Denis Quilty, 257<br />Uvaranas, Ponta Grossa - PR</a
               >
-                Rua Padre Denis Quilty, 257<br />Uvaranas, Ponta Grossa - PR
-              </a>
             </address>
           </div>
           <div class="info-bloco">
-            <i class="ri-time-line" aria-hidden="true"></i>
+            <div class="icon-wrapper">
+              <i class="ri-time-line" aria-hidden="true"></i>
+            </div>
             <h3>Horários</h3>
             <p>
-              Segunda a Sexta:<br /><time datetime="08:00">08:00</time> -
-              <time datetime="18:00">18:00</time>
+              Seg a Sex: <time datetime="08:00">08h</time> -
+              <time datetime="18:00">18h</time>
             </p>
             <p>
-              Sábado:<br /><time datetime="08:00">08:00</time> -
-              <time datetime="18:00">12:00</time>
+              Sábado: <time datetime="08:00">08h</time> -
+              <time datetime="12:00">12h</time>
             </p>
           </div>
           <div class="info-bloco">
-            <i class="ri-global-line" aria-hidden="true"></i>
+            <div class="icon-wrapper">
+              <i class="ri-global-line" aria-hidden="true"></i>
+            </div>
             <h3>Redes Sociais</h3>
             <div class="redes-sociais">
               <a
                 href="https://wa.me/5542999802609"
                 aria-label="Visite nosso WhatsApp"
-                ><i class="ri-whatsapp-fill"></i
+                ><i class="ri-whatsapp-fill" aria-hidden="true"></i
               ></a>
               <a
                 href="https://www.facebook.com/Artecnologiadomestica/"
                 aria-label="Visite nosso Facebook"
-                ><i class="ri-facebook-fill"></i
+                ><i class="ri-facebook-fill" aria-hidden="true"></i
               ></a>
               <a
                 href="https://www.instagram.com/artecnologiapg/"
                 aria-label="Visite nosso Instagram"
-                ><i class="ri-instagram-fill"></i
+                ><i class="ri-instagram-fill" aria-hidden="true"></i
               ></a>
             </div>
           </div>
@@ -284,30 +396,33 @@
     </main>
 
     <a
-      href="https://wa.me/5541912345678?text=Olá!%20Gostaria%20de%20mais%20informações."
+      href="https://wa.me/5542999802609?text=Olá!%20Gostaria%20de%20mais%20informações."
       class="whatsapp-flutuante"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Entrar em contato pelo WhatsApp"
     >
-      <i class="ri-whatsapp-line"></i>
+      <i class="ri-whatsapp-line" aria-hidden="true"></i>
     </a>
 
-    <footer>
+    <footer class="footer">
       <nav class="footer-nav">
         <ul>
           <li><a href="#inicio">Início</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Nossas Soluções</a></li>
+          <li><a href="#sobre">Sobre nós</a></li>
+          <li><a href="#portfolio">Serviços Realizados</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
-      <p>
-        © <time datetime="2025">2025</time> AR Tecnologia Doméstica - Direitos
-        reservados
+      <p class="footer-copy">
+        © <span id="current-year"></span> AR Tecnologia Doméstica - Todos os
+        direitos reservados.
       </p>
     </footer>
 
+    <script src="https://unpkg.com/imask"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
